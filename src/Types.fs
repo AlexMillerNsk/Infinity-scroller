@@ -1,18 +1,17 @@
 ﻿module Types
 
-type Deferred<'t> =
+type Deferred<'T> =
     | HasNotStartedYet
     | InProgress
-    | Resolved of 't
+    | Resolved of 'T
 
-type Item = {
-    albumId: int
+type Item =
+  { albumId: int
     id: int
     title: string
     url: string
-    thumbnailUrl: string
-  }
+    thumbnailUrl: string }
 
-type AsyncOperationStatus<'t> =
+type AsyncOperationStatus<'T> =
     | Started
-    | Finished of 't
+    | Finished of 'T
